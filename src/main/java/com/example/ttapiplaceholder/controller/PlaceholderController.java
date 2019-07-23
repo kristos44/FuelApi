@@ -20,43 +20,11 @@ public class PlaceholderController {
 
     @GetMapping(path = "/static/{countryCode}", produces= MediaType.APPLICATION_JSON_VALUE)
     public String getStaticResponse(@PathVariable String countryCode) {
-//        String file ="/home/krzysztof/zadanie_tt/StaticFeed-" + countryCode + ".json";
-//
-//        return readFromFile(file);
-
-//        String staticResponse = "";
-//
-//
-//        try {
-//            staticResponse = IOUtils.toString(
-//                    this.getClass().getResourceAsStream(feedFileStatic), "UTF-8"
-//            );
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return staticResponse;
-
         return getFileContent(feedFileStatic);
     }
 
     @GetMapping(path = "/dynamic/{countryCode}", produces= MediaType.APPLICATION_JSON_VALUE)
     public String getDynamicResponse(@PathVariable String countryCode) {
-//        String file ="/home/krzysztof/zadanie_tt/DynamicFeed-" + countryCode + ".json";
-//
-//        return readFromFile(file);
-//        String dynamicResponse = "";
-//
-//        try {
-//            dynamicResponse = IOUtils.toString(
-//                    this.getClass().getResourceAsStream(feedFileDynamic), "UTF-8"
-//            );
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return dynamicResponse;
-
         return getFileContent(feedFileDynamic);
     }
 
@@ -73,26 +41,4 @@ public class PlaceholderController {
 
         return response;
     }
-
-//    private String readFromFile(String file) {
-//        String result = "";
-//
-//        BufferedReader reader = null;
-//        try {
-//            reader = new BufferedReader(new FileReader(file));
-//            StringBuilder builder = new StringBuilder();
-//            String currentLine = reader.readLine();
-//            while (currentLine != null) {
-//                builder.append(currentLine);
-//                currentLine = reader.readLine();
-//            }
-//
-//            result = builder.toString();
-//            reader.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        return result;
-//    }
 }
